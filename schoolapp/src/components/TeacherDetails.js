@@ -1,4 +1,4 @@
-// TeacherDetails.js
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -6,7 +6,6 @@ function TeacherDetails() {
   const [teacherDetails, setTeacherDetails] = useState([]);
 
   useEffect(() => {
-    // Fetch teacher details from the server when the component mounts
     fetchTeacherDetails();
   }, []);
 

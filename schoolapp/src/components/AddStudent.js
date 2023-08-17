@@ -30,7 +30,7 @@ function AddStudent() {
       console.log(response.data);
       setSuccessMessage('Student registration successful!');
       
-      // Clear form fields after successful submission
+     
       setFormData(initialFormData);
     } catch (error) {
       console.error(error);

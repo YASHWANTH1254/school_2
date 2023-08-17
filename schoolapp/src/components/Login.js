@@ -6,7 +6,7 @@ import './Login.css';
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [loginError, setLoginError] = useState(""); // State for login error
+    const [loginError, setLoginError] = useState(""); 
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {

@@ -32,6 +32,7 @@ function Principal() {
           <li onClick={() => navigateToPage('studentperformance')}><FaChartLine /> Student Performance</li><br/>
           <li onClick={() => navigateToPage('teacherdetails')}><FaChalkboardTeacher /> Teacher Details</li> <br/>
           <li><a href="teacherperform"><FaChartLine /> Teacher Performance</a></li> <br/>
+          {/* <li onClick={() => navigateToPage('teacherpdetails')}><FaChartLine /> Teacher Performance</li><br/> */}
           <li><a href="/"><FaSignOutAlt /> Logout</a></li>
         </ul>
       </nav>

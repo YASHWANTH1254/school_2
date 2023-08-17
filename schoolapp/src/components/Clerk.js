@@ -6,7 +6,8 @@ import AddTeacherPage from './AddTeacher';
 import StudentPerformPage from './StudentPermform';
 import TeacherPerformPage from './TeacherPerform';
 import StudentDetails from './StudenDetails';
-
+import StudentPdetails from './StudentPdetails';
+import TeacherPdetails from './TeacherPdetails';
 
 function Clerk() {
   const [currentPage, setCurrentPage] = useState(null);
@@ -27,6 +28,10 @@ function Clerk() {
         return <TeacherPerformPage />;
       case 'studentdetails':
         return <StudentDetails />;
+      case 'studentpdetails':
+        return <StudentPdetails />;
+      case 'teacherpdetails':
+        return <TeacherPdetails />;
       default:
         return null;
     }
@@ -44,7 +49,8 @@ function Clerk() {
           <li onClick={() => navigateToPage('studentperform')}><FaChartLine /> Add Student Performance</li><br/>
           <li onClick={() => navigateToPage('teacherperform')}><FaChartLine /> Add Teacher Performance</li><br/>
           <li onClick={() => navigateToPage('studentdetails')}><FaUser /> Student Details</li><br/>
-          <li onClick={() => navigateToPage('studentperformance')}><FaChartLine /> Student Performance</li><br/>
+          <li onClick={() => navigateToPage('studentpdetails')}><FaChartLine /> Student Performance</li><br/>
+          
           <a href='/'><li><FaSignOutAlt /> Logout</li></a>
         </ul>
       </nav>

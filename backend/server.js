@@ -95,6 +95,84 @@ app.get('/api/getTeacherDetails', (req, res) => {
   });
 });
 
+app.post('/student-performance', (req, res) => {
+  const { studentId, subject, marks, grade } = req.body;
+  const query = 'INSERT INTO StudentPerform (studentId, subject, marks, grade) VALUES (?, ?, ?, ?)';
+  db.query(query, [studentId, subject, marks, grade], (err, result) => {
+  if (err) {
+  console.error('Error inserting data:', err);
+  res.status(500).json({ error: 'An error occurred' });
+   } else {
+   res.json({ message: 'Data inserted successfully' });
+   }
+});
+  });
+  
+  // GET method to retrieve student performance
+  app.get('/student-performance', (req, res) => {
+  const query = `
+  SELECT
+   s.id,
+  CONCAT(s.firstName, ' ', s.lastName) AS studentName,
+  sp.subject,
+  sp.marks,
+  sp.grade
+  FROM
+  students s
+  JOIN
+   StudentPerform sp ON s.id = sp.studentId;
+  `;
+  db.query(query, (err, results) => {
+  if (err) {
+  console.error('Error fetching data:', err);
+  res.status(500).json({ error: 'An error occurred' });
+  } else {
+   res.json(results);
+  }
+  });
+  });
+
+  // POST method to add teacher performance
+// app.post('/teacher-performance', (req, res) => {
+//   const { teacherId, subject, performance, feedback } = req.body;
+//   const query = 'INSERT INTO teacherperform (teacherId, subject, performance, feedback) VALUES (?, ?, ?, ?)';
+//   db.query(query, [teacherId, subject, performance, feedback], (err, result) => {
+//     if (err) {
+//       console.error('Error inserting data:', err);
+//       res.status(500).json({ error: 'An error occurred' });
+//     } else {
+//       res.json({ message: 'Data inserted successfully' });
+//     }
+//   });
+// });
+
+// // GET method to retrieve teacher performance
+// app.get('/teacher-performance', (req, res) => {
+//   const query = `
+//     SELECT
+//       t.id AS teacherId,
+//       CONCAT(t.firstName, ' ', t.lastName) AS teacherName,
+//       tp.subject,
+//       tp.performance,
+//       tp.feedback
+//     FROM
+//       teachers t
+//     JOIN
+//       teacherperform tp ON t.id = tp.teacherId;
+//   `;
+//   db.query(query, (err, results) => {
+//     if (err) {
+//       console.error('Error fetching data:', err);
+//       res.status(500).json({ error: 'An error occurred' });
+//     } else {
+//       res.json(results);
+//     }
+//   });
+// });
+
+
+ 
+
 
 app.listen(4000, () => {
   console.log("Running backend server");

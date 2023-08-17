@@ -29,7 +29,6 @@ function AddTeacher() {
       console.log(response.data);
       setSuccessMessage('Teacher details added successfully!');
       
-      // Clear form fields after successful submission
       setFormData({
         firstName: '',
         lastName: '',

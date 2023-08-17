@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './StudentPerform.css'; // Import the CSS file
+import axios from 'axios';
+import './StudentPerform.css'; 
 
 function StudentPerform() {
   const [formData, setFormData] = useState({
@@ -17,14 +18,21 @@ function StudentPerform() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can handle form submission logic here, like sending data to a server
+
+    try {
+      const response = await axios.post('http://localhost:4000/student-performance', formData);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+
     console.log(formData);
   };
 
   return (
-    <div className="form-container" style={{'margin-top':'45px'}}>
+    <div className="form-container" style={{marginTop: '45px'}}>
       <h2>Student Performance Details</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">

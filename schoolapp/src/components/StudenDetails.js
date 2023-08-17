@@ -1,4 +1,3 @@
-// StudentDetails.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -6,7 +5,7 @@ function StudentDetails() {
   const [studentDetails, setStudentDetails] = useState([]);
 
   useEffect(() => {
-    // Fetch student details from the server when the component mounts
+    
     fetchStudentDetails();
   }, []);
 
@@ -19,8 +18,6 @@ function StudentDetails() {
     }
   };
   
-  
-
   return (
     <div>
       <h2>Student Details</h2>
