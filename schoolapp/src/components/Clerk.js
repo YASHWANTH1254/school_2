@@ -30,8 +30,7 @@ function Clerk() {
         return <StudentDetails />;
       case 'studentpdetails':
         return <StudentPdetails />;
-      case 'teacherpdetails':
-        return <TeacherPdetails />;
+      
       default:
         return null;
     }
@@ -50,7 +49,6 @@ function Clerk() {
           <li onClick={() => navigateToPage('teacherperform')}><FaChartLine /> Add Teacher Performance</li><br/>
           <li onClick={() => navigateToPage('studentdetails')}><FaUser /> Student Details</li><br/>
           <li onClick={() => navigateToPage('studentpdetails')}><FaChartLine /> Student Performance</li><br/>
-          
           <a href='/'><li><FaSignOutAlt /> Logout</li></a>
         </ul>
       </nav>

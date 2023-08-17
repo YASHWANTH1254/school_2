@@ -3,6 +3,8 @@ import './principal.css';
 import { FaUser, FaChartLine, FaChalkboardTeacher, FaSignOutAlt } from 'react-icons/fa';
 import StudentDetails from './StudenDetails';
 import TeacherDetails from './TeacherDetails';
+import StudentPdetails from './StudentPdetails';
+import TeacherPdetails from './TeacherPdetails';
 
 function Principal() {
   const [currentPage, setCurrentPage] = useState(null);
@@ -17,6 +19,10 @@ function Principal() {
         return <StudentDetails />;
       case 'teacherdetails':
         return <TeacherDetails />
+      case 'studentpdetails':
+        return <StudentPdetails />;
+      case 'teacherpdetails':
+        return <TeacherPdetails />;
       default:
         return null;
     }
@@ -29,10 +35,10 @@ function Principal() {
         </div>
         <ul className="list-unstyled components">
           <li onClick={() => navigateToPage('studentdetails')}><FaUser /> Student Details</li><br/>
-          <li onClick={() => navigateToPage('studentperformance')}><FaChartLine /> Student Performance</li><br/>
+          <li onClick={() => navigateToPage('studentpdetails')}><FaChartLine /> Student Performance</li><br/>
           <li onClick={() => navigateToPage('teacherdetails')}><FaChalkboardTeacher /> Teacher Details</li> <br/>
-          <li><a href="teacherperform"><FaChartLine /> Teacher Performance</a></li> <br/>
-          {/* <li onClick={() => navigateToPage('teacherpdetails')}><FaChartLine /> Teacher Performance</li><br/> */}
+          
+          <li onClick={() => navigateToPage('teacherpdetails')}><FaChartLine /> Teacher Performance</li><br/>
           <li><a href="/"><FaSignOutAlt /> Logout</a></li>
         </ul>
       </nav>
