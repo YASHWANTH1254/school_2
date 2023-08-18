@@ -1,4 +1,4 @@
-/* StudentPerform.css */
+
 .form-container {
     max-width: 400px;
     margin: 0 auto;
@@ -33,7 +33,7 @@
   }
   
   .form-group input[type="number"] {
-    width: 100px; /* Adjust width for number input */
+    width: 100px; 
   }
   
   .form-group button {

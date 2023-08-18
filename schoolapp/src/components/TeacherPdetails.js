@@ -5,7 +5,6 @@ function TeacherPdetails() {
 const [performanceData, setPerformanceData] = useState([]);
 
 useEffect(() => {
-// Fetch student details from the server when the component mounts
 fetchTeacherPdetails();
  }, []);
 

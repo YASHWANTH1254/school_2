@@ -7,7 +7,6 @@ import StudentPerformPage from './StudentPermform';
 import TeacherPerformPage from './TeacherPerform';
 import StudentDetails from './StudenDetails';
 import StudentPdetails from './StudentPdetails';
-import TeacherPdetails from './TeacherPdetails';
 
 function Clerk() {
   const [currentPage, setCurrentPage] = useState(null);

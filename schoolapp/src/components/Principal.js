@@ -36,8 +36,7 @@ function Principal() {
         <ul className="list-unstyled components">
           <li onClick={() => navigateToPage('studentdetails')}><FaUser /> Student Details</li><br/>
           <li onClick={() => navigateToPage('studentpdetails')}><FaChartLine /> Student Performance</li><br/>
-          <li onClick={() => navigateToPage('teacherdetails')}><FaChalkboardTeacher /> Teacher Details</li> <br/>
-          
+          <li onClick={() => navigateToPage('teacherdetails')}><FaChalkboardTeacher /> Teacher Details</li> <br/>         
           <li onClick={() => navigateToPage('teacherpdetails')}><FaChartLine /> Teacher Performance</li><br/>
           <li><a href="/"><FaSignOutAlt /> Logout</a></li>
         </ul>

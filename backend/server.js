@@ -1,4 +1,4 @@
-// server.js
+
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -17,7 +17,6 @@ const db = mysql.createConnection({
 
 app.post('/Login', (req, res) => {
   const { username, password } = req.body;
-
   db.query("SELECT * FROM users WHERE username = ? AND password = ?", [username, password],
     (err, result) => {
       if (err) {
@@ -108,7 +107,7 @@ app.post('/student-performance', (req, res) => {
 });
   });
   
-  // GET method to retrieve student performance
+  
   app.get('/student-performance', (req, res) => {
   const query = `
   SELECT
@@ -145,7 +144,7 @@ app.post('/student-performance', (req, res) => {
     });
     });
     
-    // GET method to retrieve student performance
+    
     app.get('/teacher-performance', (req, res) => {
     const query = `
     SELECT

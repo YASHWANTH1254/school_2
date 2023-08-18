@@ -30,7 +30,7 @@ const Login = () => {
           console.log(error);
           setLoginError("Invalid username or password");
           setUsername(""); // Clear username
-          setPassword(""); // Clear password
+          setPassword(""); 
       });
   }
     return (
@@ -50,7 +50,7 @@ const Login = () => {
                 </div>
                 <br/><br/>
                 <button onClick={handleSubmit}>Login</button>
-                {loginError && <p className="error-message">{loginError}</p>} {/* Display error message */}
+                {loginError && <p className="error-message">{loginError}</p>} 
             </div>
         </div>
         </div>

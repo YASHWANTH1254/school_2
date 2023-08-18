@@ -3,12 +3,15 @@ import axios from 'axios';
 import './StudentPerform.css'; 
 
 function StudentPerform() {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     studentId: '',
     subject: '',
     marks: '',
     grade: '',
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,11 +27,11 @@ function StudentPerform() {
     try {
       const response = await axios.post('http://localhost:4000/student-performance', formData);
       console.log(response.data);
+      setSubmitSuccess(true);
+      setFormData(initialFormData); // Reset form fields
     } catch (error) {
       console.error(error);
     }
-
-    console.log(formData);
   };
 
   return (
@@ -77,6 +80,9 @@ function StudentPerform() {
         </div>
         <button type="submit">Submit</button>
       </form>
+      {submitSuccess ? (
+        <p className="success-message">Form submitted successfully!</p>
+      ) : null}
     </div>
   );
 }
