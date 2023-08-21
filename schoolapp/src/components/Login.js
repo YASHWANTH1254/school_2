@@ -50,7 +50,7 @@ const Login = () => {
                 </div>
                 <br/><br/>
                 <button onClick={handleSubmit}>Login</button>
-                {loginError && <p className="error-message">{loginError}</p>} 
+                {loginError && <p  style={{color:'red', marginTop: '25px' }} >{loginError}</p>} 
             </div>
         </div>
         </div>
